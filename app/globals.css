@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Glysa";
+  src: url("/fonts/Glysa.otf") format("opentype");
+  font-weight: 12 72;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("/fonts/LexendDeca-VariableFont_wght.ttf") format("truetype");
+  font-weight: 12 72;
+  font-style: normal;
+}
+
+/*text types*/
+body {
+  @apply bg-Grey-100 text-white;
+}
+h1 {
+  @apply font-glysa text-h1 font-medium;
+}
+h2 {
+  @apply font-glysa text-h2 font-medium;
+}
+h3 {
+  @apply text-body-lg;
+}
+.message {
+  @apply text-white text-body-sm;
+}
+
+/*Text opacity*/
+.secondary {
+  @apply text-opacity-56;
+}
+.disabled {
+  @apply text-opacity-32;
+}
+
+/*input text settings*/
+input[type="text"] {
+  @apply bg-Grey-80 border border-Grey-60 px-3 py-2 rounded-lg focus:outline-none;
+}
+input[type="text"]:hover {
+  @apply border-Grey-30 bg-Grey-80;
+}
+input[type="text"]:active {
+  @apply border-Grey-10 bg-Grey-60 text-opacity-0;
+}
+input[type="text"]:finished {
+  @apply border-Grey-60 bg-Grey-80 text-opacity-0;
+}
+input[type="text"]::placeholder {
+  @apply disabled text-white;
+}
+input[type="text"]:hover::placeholder {
+  @apply disabled text-white;
+}
+input[type="text"]:active::placeholder {
+  @apply text-white;
+}
+input[type="text"]:finished::placeholder {
+  @apply text-white;
+}
+
+/*other settings*/
+span {
+  @apply message secondary text-white;
+}
+label {
+  @apply flex flex-col gap-1;
+}
+
+/* After recommend color change */
+/* Customize the appearance of autofilled form fields */
+input:-webkit-autofill {
+  @apply border-Grey-60 bg-Grey-80 text-white;
+  -webkit-text-fill-color: white !important;
+}
+
+/* Remove the default Webkit transition to avoid flash */
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+}
